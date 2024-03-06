@@ -1,6 +1,7 @@
 package com.example.ContactMicroserviceSecurityOAuth2.Config;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.security.authentication.AbstractAuthenticationToken;
 import org.springframework.security.core.GrantedAuthority;
@@ -14,6 +15,7 @@ import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Configuration
 public class JwtAuthConverter implements Converter<Jwt, AbstractAuthenticationToken> {
 
     @Value("${Keycloak.clientId}")
